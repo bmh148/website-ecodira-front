@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+/* Animations globales */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@layer base {
+  body {
+    @apply bg-white text-eco-gray antialiased;
+  }
+
+  /* Smooth Scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-eco-green to-eco-green/90 text-white px-6 py-3 rounded-lg font-semibold 
+           hover:scale-105 hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center
+           relative overflow-hidden hover:from-eco-green/90 hover:to-eco-green;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .nav-link {
+    @apply text-eco-gray hover:text-eco-green transition-colors duration-200 relative after:content-[''] 
+           after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-eco-green 
+           after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  .form-input {
+    @apply w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-eco-green focus:border-eco-green 
+           outline-none transition-all duration-200 bg-white hover:shadow-md;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-eco-gray mb-2 transition-colors;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-500 
+           hover:scale-[1.02] hover:-translate-y-1;
+  }
+
+  .section-padding {
+    @apply pt-40 md:pt-36;
+  }
+
+  /* Nouvelles classes d'animation */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slideUp {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-scaleIn {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  /* Classes pour les effets de survol */
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .hover-scale {
+    @apply transition-all duration-300 hover:scale-105;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-eco-green to-eco-green/80 bg-clip-text text-transparent;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/80;
+  }
+}
+
+/* Style pour les popups */
+.popup-overlay {
+  @apply fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-start z-[9999]
+         animate-fadeIn pt-20 px-4;
+}
+
+.popup-content {
+  @apply relative bg-white p-6 rounded-xl shadow-2xl w-full max-w-sm mx-auto animate-scaleIn
+         border border-gray-100/50 transform transition-all duration-300;
+}
+
+/* Style pour le formulaire dans le popup */
+.popup-form {
+  @apply flex flex-col gap-5;
+}
+
+.popup-input {
+  @apply w-full px-4 py-3 border-2 border-gray-200 rounded-lg text-base transition-all duration-200
+         focus:border-eco-green focus:ring-2 focus:ring-eco-green/20 outline-none
+         placeholder:text-gray-400 bg-gray-50/50;
+}
+
+.popup-button {
+  @apply bg-gradient-to-r from-eco-green to-eco-green/90 text-white py-3.5 px-6 rounded-lg font-semibold
+         transition-all duration-300 hover:scale-[1.02] hover:shadow-lg w-full mt-3
+         flex items-center justify-center space-x-2;
+}
+
+.popup-close {
+  @apply absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 transition-colors duration-200
+         rounded-full hover:bg-gray-100 bg-white z-10 flex items-center justify-center;
+}
+
+/* Classes pour les sections */
+.section-animate {
+  @apply opacity-0 translate-y-8 transition-all duration-700;
+}
+
+.section-animate.in-view {
+  @apply opacity-100 translate-y-0;
+}
+
+/* Glassmorphism */
+.glass-card {
+  @apply backdrop-blur-md bg-white/90 border border-white/20 shadow-xl;
+}
+
+.is--popup {
+  align-items: center;
+}
+
+.is--popup-body {
+  max-height: 40%;
+}

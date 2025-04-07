@@ -1,40 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ECODIRA - Site Web
 
-## Getting Started
+Site web de présentation pour ECODIRA, spécialiste des énergies renouvelables.
 
-First, run the development server:
+## Technologies utilisées
 
+- Next.js 14
+- React 18
+- TypeScript
+- Tailwind CSS
+
+## Prérequis
+
+- Node.js 18.17 ou supérieur
+- npm ou yarn
+
+## Installation
+
+1. Cloner le repository :
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone [URL_DU_REPO]
+cd ecodira
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Installer les dépendances :
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Lancer le serveur de développement :
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Ouvrir [http://localhost:3000](http://localhost:3000) dans votre navigateur.
 
-## Learn More
+## Structure du projet
 
-To learn more about Next.js, take a look at the following resources:
+```
+ecodira/
+├── app/
+│   ├── components/     # Composants réutilisables
+│   ├── contact/        # Page de contact
+│   ├── services/       # Page des services
+│   ├── globals.css     # Styles globaux
+│   ├── layout.tsx      # Layout principal
+│   └── page.tsx        # Page d'accueil
+├── public/
+│   └── images/         # Images du site
+├── package.json
+├── tailwind.config.js
+└── tsconfig.json
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Fonctionnalités
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Design responsive
+- Formulaire de contact
+- Popup de collecte de leads
+- Présentation des services
+- Optimisation SEO
+- Conformité GDPR
 
-## Deploy on Vercel
+## Déploiement
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Le site peut être déployé sur Vercel avec la commande :
+```bash
+npm run build
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# website-ecodira-front
-# website-ecodira-front
-# website-ecodira-front
-# website-ecodira-front
+## Contribution
+
+1. Fork le projet
+2. Créer une branche pour votre fonctionnalité
+3. Commiter vos changements
+4. Pousser vers la branche
+5. Ouvrir une Pull Request
+
+## Licence
+
+Tous droits réservés © ECODIRA 
