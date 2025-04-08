@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       colors: {
         'eco-green': '#2E7D32',
-        'eco-cream': '#F5F5DC',
+        'eco-cream': '#EDEDED',
         'eco-gray': '#4A4A4A',
       },
       fontFamily: {

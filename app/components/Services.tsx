@@ -65,11 +65,11 @@ export default function Services() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-eco-cream py-24">
-      <div className="container-custom">
-        <h1 className="text-5xl font-bold text-center mb-16 gradient-text section-animate">
+    <main className="min-h-screen bg-eco-cream py-12">
+      <div className="container-custom py-8">
+        <h2 className="text-4xl md:text-5xl font-bold text-eco-green text-center mb-12 px-4">
           Nos Solutions Énergétiques
-        </h1>
+        </h2>
 
         <div className="space-y-32">
           {services.map((service, index) => (

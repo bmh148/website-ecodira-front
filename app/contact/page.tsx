@@ -13,10 +13,43 @@ export default function Contact() {
     message: '',
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // TODO: Implémenter l'envoi du formulaire
-    console.log(formData);
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Erreur lors de l\'envoi du message');
+      }
+
+      setSubmitStatus('success');
+      setFormData({
+        nom: '',
+        email: '',
+        telephone: '',
+        adresse: '',
+        departement: '',
+        typeInstallation: '',
+        message: '',
+      });
+    } catch (error) {
+      console.error('Erreur:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -208,22 +241,6 @@ export default function Contact() {
                     <option value="89">89 - Yonne</option>
                     <option value="90">90 - Territoire de Belfort</option>
                   </optgroup>
-                  <optgroup label="Départements d'Outre-Mer">
-                    <option value="971">971 - Guadeloupe</option>
-                    <option value="972">972 - Martinique</option>
-                    <option value="973">973 - Guyane</option>
-                    <option value="974">974 - La Réunion</option>
-                    <option value="976">976 - Mayotte</option>
-                  </optgroup>
-                  <optgroup label="Collectivités d'Outre-Mer">
-                    <option value="975">975 - Saint-Pierre-et-Miquelon</option>
-                    <option value="977">977 - Saint-Barthélemy</option>
-                    <option value="978">978 - Saint-Martin</option>
-                    <option value="984">984 - Terres australes et antarctiques françaises</option>
-                    <option value="986">986 - Wallis-et-Futuna</option>
-                    <option value="987">987 - Polynésie française</option>
-                    <option value="988">988 - Nouvelle-Calédonie</option>
-                  </optgroup>
                 </select>
               </div>
 
@@ -260,9 +277,25 @@ export default function Contact() {
                 />
               </div>
 
-              <button type="submit" className="btn-primary w-full">
-                Envoyer la demande
+              <button
+                type="submit"
+                className="w-full bg-eco-green text-white py-3 px-6 rounded-lg hover:bg-eco-green-dark transition-colors duration-300 disabled:opacity-50"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
               </button>
+
+              {submitStatus === 'success' && (
+                <div className="text-green-600 text-center mt-4">
+                  Message envoyé avec succès !
+                </div>
+              )}
+
+              {submitStatus === 'error' && (
+                <div className="text-red-600 text-center mt-4">
+                  Une erreur est survenue. Veuillez réessayer.
+                </div>
+              )}
             </form>
           </div>
 
@@ -279,7 +312,7 @@ export default function Contact() {
                 </p>
                 <p className="flex items-center">
                   <span className="text-2xl mr-3">📍</span>
-                  <span>17 rue de Paris, 75019 Paris</span>
+                  <span>90 Rue d'Italie 13006 Marseille 6e Arrondissement </span>
                 </p>
                 <p className="flex items-center">
                   <span className="text-2xl mr-3">✉️</span>
