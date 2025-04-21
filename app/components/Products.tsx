@@ -70,7 +70,7 @@ export default function Products() {
       <Popup
         isOpen={isPopupOpen}
         onClose={() => setIsPopupOpen(false)}
-        title={`Demande d'information - ${selectedProduct}`}
+        // title={`Demande d'information - ${selectedProduct}`}
       />
     </section>
   );
