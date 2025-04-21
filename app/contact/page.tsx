@@ -104,7 +104,7 @@ export default function Contact() {
                 </label>
                 <input
                   id="telephone"
-                  type="tel"
+                  type='number'
                   name="telephone"
                   value={formData.telephone}
                   onChange={handleChange}

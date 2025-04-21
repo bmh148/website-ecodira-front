@@ -16,6 +16,7 @@ const services = [
       'Installation rapide par nos experts certifiés'
     ],
     image: '/images/pompe-a-chaleur.jpg',
+    link: '/pompe-chaleur'
   },
   {
     id: 2,
@@ -28,6 +29,7 @@ const services = [
       'Conformité aux normes thermiques'
     ],
     image: '/images/isolation.png',
+    link: '/isolation-exterieure'
   },
   {
     id: 3,
@@ -40,6 +42,7 @@ const services = [
       'Maintenance minimale'
     ],
     image: '/images/ballon-thermodynamique.png',
+    link: '/ballon-thermodynamique'
   }
 ];
 
@@ -110,10 +113,10 @@ export default function Services() {
                   ))}
                 </ul>
                 <Link 
-                  href="/contact" 
+                  href={service.link} 
                   className="btn-primary group inline-flex items-center space-x-2 mt-6"
                 >
-                  <span>Demander un devis gratuit</span>
+                  <span>En savoir plus</span>
                   <svg 
                     className="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1" 
                     fill="none" 
