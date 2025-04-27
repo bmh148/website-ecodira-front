@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Services from './components/Services';
+import Testimonials from './components/Testimonials';
 import Hero from './components/Hero';
 import ProjectSteps from './components/ProjectSteps';
 import Image from 'next/image';
@@ -78,6 +79,9 @@ export default function Home() {
 
       {/* Project Steps Section */}
       <ProjectSteps />
+
+      {/* Avis Clients Section */}
+      <Testimonials />
 
       {/* CTA Section */}
       <section className="py-16 bg-eco-green text-white">

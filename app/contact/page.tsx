@@ -306,13 +306,13 @@ export default function Contact() {
               <div className="space-y-4">
                 <p className="flex items-center">
                   <span className="text-2xl mr-3">📞</span>
-                  <a href="tel:3000309104" className="hover:text-eco-green transition-colors">
-                    30 00 30 91 04
+                  <a href="tel:0491300030" className="hover:text-eco-green transition-colors">
+                    04 91 30 00 30
                   </a>
                 </p>
                 <p className="flex items-center">
                   <span className="text-2xl mr-3">📍</span>
-                  <span>90 Rue d'Italie 13006 Marseille 6e Arrondissement </span>
+                  <span>90 Rue d'Italie 13006 Marseille </span>
                 </p>
                 <p className="flex items-center">
                   <span className="text-2xl mr-3">✉️</span>
@@ -326,9 +326,8 @@ export default function Contact() {
             <div className="card">
               <h2 className="text-2xl font-bold text-eco-green mb-6">Horaires d'ouverture</h2>
               <div className="space-y-2">
-                <p>Lundi - Vendredi : 9h00 - 18h00</p>
-                <p>Samedi : 9h00 - 12h00</p>
-                <p>Dimanche : Fermé</p>
+                <p>Dimanche - Vendredi : 9h00 - 18h00</p>
+                <p>Samedi : Fermé</p>
               </div>
             </div>
           </div>
