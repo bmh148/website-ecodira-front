@@ -1,0 +1,26 @@
+{
+  "name": "ECODIRA - Solutions Énergétiques Durables",
+  "short_name": "ECODIRA",
+  "description": "Solutions énergétiques durables pour réduire votre empreinte carbone",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#16a34a",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/images/logo1.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo1.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 
